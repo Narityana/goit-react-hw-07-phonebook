@@ -1,11 +1,16 @@
 .contact__item {
     display: flex;
     flex-direction: row;
+    gap: 15px;
     justify-content: space-between;
     align-items: center;
-    width: 300px;
-}
+    width: 100%;
 
+    
+}
+p {
+    width: 200px;
+}
 .contact__button {
     width: 80px;
         height: 25px;

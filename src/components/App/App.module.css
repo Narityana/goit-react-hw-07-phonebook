@@ -1,6 +1,6 @@
 .app__container {
     margin: 100px auto;
-    width: 400px;
+    width: 600px;
     padding: 30px;
     background-color: rgb(59, 64, 121);
     display: flex;
@@ -9,4 +9,5 @@
 
 .app__title, .app__subTitle {
     color: white;
+    text-align: center;
 }

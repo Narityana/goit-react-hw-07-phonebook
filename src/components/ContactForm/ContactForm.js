@@ -1,16 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contactsSlice';
+import { selectContacts } from 'redux/selectors';
+import { addContact } from 'redux/operations';
 import css from './ContactForm.module.css';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contactList.contacts);
+  const contacts = useSelector(selectContacts);
 
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.target;
     const name = form.elements.name.value;
     const number = form.elements.number.value;
+
     const sameContact = contacts.find(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
@@ -19,7 +21,7 @@ const ContactForm = () => {
       form.reset();
       return;
     }
-    dispatch(addContact(name, number));
+    dispatch(addContact({ name, number }));
     form.reset();
   };
 
